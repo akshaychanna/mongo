@@ -1,0 +1,50 @@
+Create:    
+        inseartOne(data,option)
+        inseartMany(data,option)
+READ:  
+        find(filter,option)
+        findOne(filter,option)
+Update: 
+        updateOne(filter, data, option)
+        updateMany(filter, data, option)
+        replaceOne(filter, data, option)
+Delete:
+        deleteOne(filter, option)
+        deleteMany(filter, option)
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Delete:
+To delete single document:   db.seed_target.deleteOne({key: value})
+To delete multiple docs :    db.seed_target.deleteMany({city:"pune"})
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Update :
+To update single document : db.seed_target.updateOne({name:"amar"},{$set:{edu: "engg"}}) //will add new field of "edu" if not present.
+To update multiple docs :  db.seed_target.updateMany({city:"pune"}, {$set:{state:"MH"}})
+NOTE: 
+update VS updateOne,updateMany : update overwrites and updateOne and updateMany appends.
+and for update $set is not required.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+replaceOne:
+To replace single doc : db.seed_target.replaceOne({"id":1, {name:"bantu",age:26,edu:"engg"}})
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Create/Insert:
+To insert single doc : db.seed_target.inseartOne({"name":"akshay","age":25,"city":"solapur","college":"sinhgad"})
+To insert many docs:  db.seed_target.inseartMany([{},{},{}])
+
+
+To update or delete all docs in collection
+db.seed_target.deleteMany({}) //filter empty means will select all docs
+db.seed_target.updateMany({},{$set:{}}) //will update all docs in seed_target collection
+
+READ:
+    db.seed_target.find() //to read all docs from seed_target collection.
+    db.seed_target.find({key:value})
+
+

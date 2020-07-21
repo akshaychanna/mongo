@@ -1,0 +1,49 @@
+
+Mongodb is NoSql database.
+provides you more speed , more performance and more flexibility coz it is schemaless.
+data is stored in JSON.
+port number : 27017
+
+database ===>> collections(tables) ===> documents(entry/listing)
+
+instal Mongodb
+status :    $systemctl status Mongod
+start  :    $systemctl start mongo
+
+
+Basic Command:
+
+    * to see database:
+     >show dbs
+
+    
+    * create database and use it:
+    > use database_name
+
+
+    *creating collections:
+    > db.seed_target 
+
+
+    *to see collections(tables)
+    >show collections
+
+
+
+    *inserting document into seed_target collections.
+    > db.seed_target.insertOne({"name":"akshay","age":25})
+    {
+	    "acknowledged" : true,
+	    "insertedId" : ObjectId("5f11e904c821c6394336f29d")
+    }
+
+
+
+    *To see docs in collections.
+    > db.seed_target.find().pretty()
+    {
+	    "_id" : ObjectId("5f11e904c821c6394336f29d"),
+	    "name" : "akshay",
+	    "age" : 25
+    }
+

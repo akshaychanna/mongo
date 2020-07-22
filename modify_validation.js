@@ -1,16 +1,12 @@
-validation : 
-            which allows you to enforce a certain set of rules on incoming data 
-            so that no invalid data ends up in your database
-
-
-db.createCollection('posts', {
+db.runCommand({
+    collMod: 'posts',
     validator: {
       $jsonSchema: {
         bsonType: 'object',
         required: ['title', 'text', 'creator', 'comments'],
         properties: {
           title: {
-            bsonType: 'string',
+            bsonType: 'int',
             description: 'must be a string and is required'
           },
           text: {
@@ -41,5 +37,9 @@ db.createCollection('posts', {
           }
         }
       }
-    }
-});
+    },
+    validationAction: 'error'
+  });
+
+
+//by default validationAction is error, we can set 'warn' 

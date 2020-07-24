@@ -1,16 +1,5 @@
 find(): (( gives 20 docs )).  find returns the curser object not all the data. 
 
-projection:-
-
-find(filter , projection)
-
-PROJECTION :- with projection you can select or ignore fields. value 1 or 0.
-example :  
-            db.seed_target.find({}, {name: 1 , age: 0, _id: 0})
-            it will display all docs but only name as we given value 0 tp id and age.
-    
-            db.seed_target.find({state:"MH"},{name:1,_id:0}).pretty()
-            it will first filter the docs with state and then display selected docs with name only.
 
 1. $gt
 2. $exists

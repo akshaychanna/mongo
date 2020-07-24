@@ -1,0 +1,7 @@
+importing array of data into collection:
+
+mongoimport local_file.json -d database -c collection --jsonArray --drop
+--jsonArray if file contains multiple documents
+-- drop will remove collection if already present then it will insert documents into collection.
+
+$ mongoimport tv-shows.json -d movie_data -c tv_shows --jsonArray --drop
